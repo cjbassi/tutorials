@@ -7,7 +7,7 @@ It’s a Python based scientific computing package targeted at two sets of
 audiences:
 
 -  A replacement for NumPy to use the power of GPUs
--  a deep learning research platform that provides maximum flexibility
+-  A deep learning research platform that provides maximum flexibility
    and speed
 
 Getting Started
@@ -50,7 +50,7 @@ print(x)
 ###############################################################
 # or create a tensor basing on existing tensor. These methods
 # will reuse properties of the input tensor, e.g. dtype, unless
-# new values are provided by user
+# new values are provided by the user
 
 x = x.new_ones(5, 3, dtype=torch.double)      # new_* methods take in sizes
 print(x)
@@ -82,7 +82,7 @@ print(x + y)
 print(torch.add(x, y))
 
 ###############################################################
-# Addition: providing an output tensor as argument
+# Addition: providing an output tensor as an argument
 result = torch.empty(5, 3)
 torch.add(x, y, out=result)
 print(result)
@@ -99,7 +99,7 @@ print(y)
 #     Any operation that mutates a tensor in-place is post-fixed with an ``_``.
 #     For example: ``x.copy_(y)``, ``x.t_()``, will change ``x``.
 #
-# You can use standard NumPy-like indexing with all bells and whistles!
+# You can use standard NumPy-like indexing with all the bells and whistles!
 
 print(x[:, 1])
 
@@ -174,7 +174,7 @@ print(b)
 #
 # Tensors can be moved onto any device using the ``.to`` method.
 
-# let us run this cell only if CUDA is available
+# let's run this cell only if CUDA is available
 # We will use ``torch.device`` objects to move tensors in and out of GPU
 if torch.cuda.is_available():
     device = torch.device("cuda")          # a CUDA device object

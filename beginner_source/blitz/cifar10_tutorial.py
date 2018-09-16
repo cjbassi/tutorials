@@ -3,8 +3,8 @@
 Training a classifier
 =====================
 
-This is it. You have seen how to define neural networks, compute loss and make
-updates to the weights of the network.
+This is it. You have now seen how to define neural networks, compute loss, and
+make updates to the weights of the network.
 
 Now you might be thinking,
 
@@ -21,15 +21,14 @@ Then you can convert this array into a ``torch.*Tensor``.
    SpaCy are useful
 
 Specifically for vision, we have created a package called
-``torchvision``, that has data loaders for common datasets such as
+``torchvision`` that has data loaders for common datasets such as
 Imagenet, CIFAR10, MNIST, etc. and data transformers for images, viz.,
-``torchvision.datasets`` and ``torch.utils.data.DataLoader``.
-
-This provides a huge convenience and avoids writing boilerplate code.
+``torchvision.datasets`` and ``torch.utils.data.DataLoader``. ``torchvision``
+should help reduce boilerplate code and make things more convenient.
 
 For this tutorial, we will use the CIFAR10 dataset.
-It has the classes: ‘airplane’, ‘automobile’, ‘bird’, ‘cat’, ‘deer’,
-‘dog’, ‘frog’, ‘horse’, ‘ship’, ‘truck’. The images in CIFAR-10 are of
+It has the classes: `airplane`, `automobile`, `bird`, `cat`, `deer`,
+`dog`, `frog`, `horse`, `ship`, and `truck`. The images in CIFAR-10 are of
 size 3x32x32, i.e. 3-channel color images of 32x32 pixels in size.
 
 .. figure:: /_static/img/cifar10.png

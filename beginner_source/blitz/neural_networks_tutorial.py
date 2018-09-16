@@ -5,10 +5,10 @@ Neural Networks
 
 Neural networks can be constructed using the ``torch.nn`` package.
 
-Now that you had a glimpse of ``autograd``, ``nn`` depends on
-``autograd`` to define models and differentiate them.
-An ``nn.Module`` contains layers, and a method ``forward(input)``\ that
-returns the ``output``.
+Now that you've had a glimpse of ``autograd``, ``nn`` depends on ``autograd`` to
+define models and differentiate them.
+A ``nn.Module`` contains layers and a method ``forward(input)`` that returns the
+``output``.
 
 For example, look at this network that classifies digit images:
 
@@ -17,7 +17,7 @@ For example, look at this network that classifies digit images:
 
    convnet
 
-It is a simple feed-forward network. It takes the input, feeds it
+It's a simple feed-forward network. It takes the input, feeds it
 through several layers one after the other, and then finally gives the
 output.
 
@@ -179,7 +179,7 @@ print(loss)
 # w.r.t. the loss, and all Tensors in the graph that has ``requres_grad=True``
 # will have their ``.grad`` Tensor accumulated with the gradient.
 #
-# For illustration, let us follow a few steps backward:
+# For illustration, let's follow a few steps backward:
 
 print(loss.grad_fn)  # MSELoss
 print(loss.grad_fn.next_functions[0][0])  # Linear
@@ -257,5 +257,5 @@ optimizer.step()    # Does the update
 # .. Note::
 #
 #       Observe how gradient buffers had to be manually set to zero using
-#       ``optimizer.zero_grad()``. This is because gradients are accumulated
-#       as explained in `Backprop`_ section.
+#       ``optimizer.zero_grad()``. This is because gradients are accumulated as
+#       explained in the `Backprop`_ section.

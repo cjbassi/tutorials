@@ -4,16 +4,15 @@ Autograd: automatic differentiation
 ===================================
 
 Central to all neural networks in PyTorch is the ``autograd`` package.
-Let’s first briefly visit this, and we will then go to training our
-first neural network.
+Let’s briefly visit this first, and then we'll train our first neural network.
 
 
 The ``autograd`` package provides automatic differentiation for all operations
-on Tensors. It is a define-by-run framework, which means that your backprop is
+on Tensors. It's a define-by-run framework, which means that your backprop is
 defined by how your code is run, and that every single iteration can be
 different.
 
-Let us see this in more simple terms with some examples.
+Let's see this in more simple terms with some examples.
 
 Tensor
 --------
@@ -22,7 +21,7 @@ Tensor
 ``.requires_grad`` as ``True``, it starts to track all operations on it. When
 you finish your computation you can call ``.backward()`` and have all the
 gradients computed automatically. The gradient for this tensor will be
-accumulated into ``.grad`` attribute.
+accumulated into the ``.grad`` attribute.
 
 To stop a tensor from tracking history, you can call ``.detach()`` to detach
 it from the computation history, and to prevent future computation from being
@@ -52,12 +51,12 @@ argument that is a tensor of matching shape.
 import torch
 
 ###############################################################
-# Create a tensor and set requires_grad=True to track computation with it
+# Create a tensor and set `requires_grad=True` to track computation with it
 x = torch.ones(2, 2, requires_grad=True)
 print(x)
 
 ###############################################################
-# Do an operation of tensor:
+# Do a tensor operation:
 y = x + 2
 print(y)
 
@@ -66,7 +65,7 @@ print(y)
 print(y.grad_fn)
 
 ###############################################################
-# Do more operations on y
+# Do more operations on ``y``:
 z = y * y * 3
 out = z.mean()
 
@@ -86,9 +85,8 @@ print(b.grad_fn)
 ###############################################################
 # Gradients
 # ---------
-# Let's backprop now
-# Because ``out`` contains a single scalar, ``out.backward()`` is
-# equivalent to ``out.backward(torch.tensor(1))``.
+# Let's backprop now because ``out`` contains a single scalar.
+# ``out.backward()`` is equivalent to ``out.backward(torch.tensor(1))``.
 
 out.backward()
 
@@ -128,7 +126,7 @@ print(x.grad)
 
 ###############################################################
 # You can also stops autograd from tracking history on Tensors
-# with requires_grad=True by wrapping the code block in
+# with `requires_grad=True` by wrapping the code block in
 # ``with torch.no_grad():``
 print(x.requires_grad)
 print((x ** 2).requires_grad)
